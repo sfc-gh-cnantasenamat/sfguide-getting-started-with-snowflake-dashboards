@@ -16,6 +16,8 @@ A revenue number that misses target raises questions right away. Which region is
 
 [Snowflake Dashboards](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards) keep the answers next to the data. A dashboard is a single `.dash` file in Snowsight Workspaces. Each tile runs live SQL against tables or a semantic view in your account. Filters, chart actions, and hierarchy drilldowns let you go from a headline number to the rows behind it without leaving the page. You can then publish the dashboard so colleagues can open it in Snowflake CoWork.
 
+![Animated demo of the Revenue Pulse dashboard: scrolling the KPI tiles and charts, clicking a region to filter every chart, and asking a follow-up question that returns a breakdown of the EMEA Enterprise shortfall](assets/snowflake-dashboards-demo.gif)
+
 The dashboard is **Revenue Pulse**. It runs on synthetic data for a fictional B2B software company: 54 accounts, 3 product lines, and 24 months of revenue through September 30, 2026. The data has a story built in. Q3 2026 revenue is $1.09M behind target, and most of the gap sits in EMEA Enterprise.
 ### What You'll Learn
 - How to load a small demo dataset and semantic view with one SQL file
