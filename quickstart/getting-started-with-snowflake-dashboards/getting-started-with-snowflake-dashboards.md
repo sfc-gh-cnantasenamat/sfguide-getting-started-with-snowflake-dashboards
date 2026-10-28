@@ -103,6 +103,8 @@ That's the whole setup. Everything from here is exploring.
 
 ## Explore the Dashboard
 
+![Animated demo of the Revenue Pulse dashboard: scrolling the KPI tiles and charts, then clicking a region on the variance bars to filter the other charts](assets/dashboard-chart-actions.gif)
+
 Try each of these on the **Overview** tab, and clear the selection before the next one.
 
 ### Brush the Trend
@@ -156,7 +158,7 @@ Why is EMEA Enterprise behind target in Q3 2026? Quantify the drivers.
 
 CoWork runs queries against the same data and answers in a side panel, with a table of the drivers behind the miss. In the run below, it found EMEA Enterprise finished Q3 2026 about $779K below target, at 57.9% attainment. Renewal delays explained about 44% of the shortfall, a contract downsize about 33%, and discounts and service credits about 23%. Your answer may be worded differently, but the numbers come from the same data.
 
-![Animated demo of the Revenue Pulse dashboard in CoWork: scrolling the KPI tiles and charts, clicking a region to filter every chart, and asking why EMEA Enterprise is behind target, which returns a table of the drivers behind the shortfall](assets/snowflake-dashboards-demo.gif)
+![Animated demo in CoWork: typing why EMEA Enterprise is behind target in Q3 2026, then the answer appearing in a side panel with a table of the drivers behind the shortfall](assets/cowork-ask-why.gif)
 
 Try a follow-up of your own, such as which accounts to call first, or how EMEA Enterprise compares with the same quarter last year.
 
