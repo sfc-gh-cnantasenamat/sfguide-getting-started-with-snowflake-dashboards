@@ -14,7 +14,9 @@ fork repo link: https://github.com/sfc-gh-cnantasenamat/sfguide-getting-started-
 
 A revenue number that misses target raises questions right away. Which region is behind? Which segment? Which accounts? On many teams the answers live in exported spreadsheets or static report decks. They go stale as soon as the data changes, and every follow-up question means another export or another request to an analyst.
 
-[Snowflake Dashboards](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards) keep the answers next to the data. A dashboard is a single `.dash` file in Snowsight Workspaces. Each tile runs live SQL against tables or a semantic view in your account. Filters, chart actions, and hierarchy drilldowns let you go from a headline number to the rows behind it without leaving the page. You can then publish the dashboard so colleagues can open it in Snowflake CoWork.
+[Snowflake Dashboards](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards) (public preview) give the team one shared source of truth that they can also talk to. Analysts build a dashboard by describing it to Cortex Code (CoCo), then share it with the right roles. Anyone with access can open it in Snowflake CoWork and ask it questions: summarize what it shows, explain what drove a change, or narrow it to one segment. The answers come from the same governed data the charts use. That data never leaves Snowflake, and your existing row access and masking policies still apply.
+
+Under the hood, a dashboard is a single `.dash` file in Snowsight Workspaces. Each tile runs live SQL against tables or a semantic view in your account. Filters, chart actions, and hierarchy drilldowns take you from a headline number to the rows behind it without leaving the page.
 
 The dashboard we're building is called **Revenue Pulse**. It runs on synthetic data for a fictional B2B software company: 54 accounts, 3 product lines, and 24 months of revenue through September 30, 2026. The data has a story built in. Q3 2026 revenue is $1.09M behind target, and most of the gap sits in EMEA Enterprise.
 ### What You'll Learn
