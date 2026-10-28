@@ -1,12 +1,12 @@
 author: Chanin Nantasenamat
-id: first-dashboard-with-snowflake-dashboards-2-0
+id: getting-started-with-snowflake-dashboards
 categories: snowflake-site:taxonomy/solution-center/certification/quickstart, snowflake-site:taxonomy/product/analytics
 language: en
 summary: Load a synthetic revenue dataset with one SQL file, open a pre-made Snowflake Dashboards file, and explore filters, drilldown, and chart actions in under a minute.
 environments: web
 status: Draft
 feedback link: https://github.com/Snowflake-Labs/sfquickstarts/issues
-fork repo link: https://github.com/sfc-gh-cnantasenamat/sfguide-first-dashboard-with-snowflake-dashboards-2-0
+fork repo link: https://github.com/sfc-gh-cnantasenamat/sfguide-getting-started-with-snowflake-dashboards
 
 # Getting Started with Snowflake Dashboards
 
@@ -36,12 +36,12 @@ Everything runs in Snowsight. You don't need Python, a CLI, or a Git integration
 
 ## Get the Two Files
 
-Download these two files from the [companion repository](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards-2-0):
+Download these two files from the [companion repository](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards):
 
 | File | What it does |
 |---|---|
-| [`sql/quick_setup.sql`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards-2-0/blob/main/sql/quick_setup.sql) | Creates `REVENUE_PULSE_DB.DASHBOARD_DEMO`, three tables of synthetic data, and the `REVENUE_SEMANTIC_VIEW` semantic view |
-| [`dashboards/revenue_pulse.dash`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards-2-0/blob/main/dashboards/revenue_pulse.dash) | The finished dashboard: tiles, filters, layout, and SQL in one file |
+| [`sql/quick_setup.sql`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/blob/main/sql/quick_setup.sql) | Creates `REVENUE_PULSE_DB.DASHBOARD_DEMO`, three tables of synthetic data, and the `REVENUE_SEMANTIC_VIEW` semantic view |
+| [`dashboards/revenue_pulse.dash`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/blob/main/dashboards/revenue_pulse.dash) | The finished dashboard: tiles, filters, layout, and SQL in one file |
 
 On each file's GitHub page, select **Download raw file**.
 
@@ -136,7 +136,7 @@ You loaded a dataset, opened a dashboard file, and traced a $1.09M revenue gap t
 - Published dashboards run with each viewer's own privileges
 
 ### Next: Build It Yourself
-In Part 2, [Build Snowflake Dashboards with CoCo](https://github.com/sfc-gh-cnantasenamat/sfguide-getting-started-with-snowflake-dashboards-2-0), you build this dashboard from scratch with Cortex Code prompts. Along the way you also add a Cortex Agent, publish to a least-privilege role, and ask CoWork why the numbers moved.
+In Part 2, [Build Snowflake Dashboards with CoCo](https://github.com/sfc-gh-cnantasenamat/sfguide-build-snowflake-dashboards-with-coco), you build this dashboard from scratch with Cortex Code prompts. Along the way you also add a Cortex Agent, publish to a least-privilege role, and ask CoWork why the numbers moved.
 
 ### Related Resources
 - [Dashboards in Snowflake CoWork](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards)
