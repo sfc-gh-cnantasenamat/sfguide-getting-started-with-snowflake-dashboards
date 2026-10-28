@@ -16,17 +16,15 @@ A revenue number that misses target raises questions right away. Which region is
 
 [Snowflake Dashboards](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards) keep the answers next to the data. A dashboard is a single `.dash` file in Snowsight Workspaces. Each tile runs live SQL against tables or a semantic view in your account. Filters, chart actions, and hierarchy drilldowns let you go from a headline number to the rows behind it without leaving the page. You can then publish the dashboard so colleagues can open it in Snowflake CoWork.
 
-![Animated demo of the Revenue Pulse dashboard: scrolling the KPI tiles and charts, clicking a region to filter every chart, and asking a follow-up question that returns a breakdown of the EMEA Enterprise shortfall](assets/snowflake-dashboards-demo.gif)
-
 The dashboard is **Revenue Pulse**. It runs on synthetic data for a fictional B2B software company: 54 accounts, 3 product lines, and 24 months of revenue through September 30, 2026. The data has a story built in. Q3 2026 revenue is $1.09M behind target, and most of the gap sits in EMEA Enterprise.
 ### What You'll Learn
 - How to load a small demo dataset and semantic view with one SQL file
 - How to open a `.dash` file in Snowsight Workspaces
 - How filters, brushing, click-to-filter, and hierarchy drilldown work in a dashboard
-- How to publish a dashboard so others can open it in Snowflake CoWork
+- How to publish a dashboard to Snowflake CoWork and ask follow-up questions about it
 
 ### What You'll Build
-You'll set up the data and deploy a ready-made dashboard in your own account, so you get value from it right away. You'll download three files and point them at a schema you already have. One SQL file loads a small synthetic dataset and a semantic view in about 10 seconds. Then you upload the dashboard file to Workspaces and use it to investigate a revenue shortfall: brush a date range on the trend, click a region to filter every chart, and drill from region to segment to account. Optionally, you publish it for others. A cleanup script removes everything at the end.
+You'll set up the data and deploy a ready-made dashboard in your own account, so you get value from it right away. You'll download three files and point them at a schema you already have. One SQL file loads a small synthetic dataset and a semantic view in about 10 seconds. Then you upload the dashboard file to Workspaces and use it to investigate a revenue shortfall: brush a date range on the trend, click a region to filter every chart, and drill from region to segment to account. Finally, you publish it to Snowflake CoWork and ask why the numbers moved. A cleanup script removes everything at the end.
 
 The result is a four-tab Revenue Pulse dashboard running on live queries. The tabs are **Overview**, **Hierarchical Chart**, **Hierarchical Table**, and **Data Source**.
 
@@ -123,25 +121,39 @@ The **Hierarchical Table** tab shows the same region › segment › account pat
 ### Use the Header Filters
 Set **Region = EMEA** and **Segment = Enterprise** from the filter bar. These filters apply across every tab, which makes them the quickest way to compare one slice against another.
 
-## Share It in CoWork (Optional)
+## Ask Why in CoWork
 
-To let someone else open the dashboard:
+The dashboard has shown you where the gap is: EMEA Enterprise, and three of its accounts in particular. The next question is why. Publish the dashboard to [Snowflake CoWork](https://docs.snowflake.com/en/user-guide/snowflake-cortex/snowflake-cowork) and you can ask that question in plain language, right next to the charts. Anyone you share it with can do the same.
+
+### Publish the Dashboard
 
 1. With `revenue_pulse.dash` open, select **Share**.
-2. Add the role that should see it, with **Can view** access, then publish.
-3. Open **Artifacts** in [Snowflake CoWork](https://docs.snowflake.com/en/user-guide/snowflake-cortex/snowflake-cowork) and select **Revenue Pulse**.
+2. Add a role with **Can view** access, then publish. Your own role works; add a teammate's role too if you want them to see it.
+3. Open **Artifacts** in CoWork and select **Revenue Pulse**.
 
 Viewers run the dashboard with their own privileges, so their role needs `SELECT` on the three tables and the semantic view, plus a warehouse. Publishing needs the `MANAGE ACCESS ON DASHBOARD ARTIFACTS` privilege, which is [granted to `PUBLIC` by default](https://docs.snowflake.com/en/release-notes/bcr-bundles/un-bundled/bcr-manage-access-dashboard-artifacts).
 
-In CoWork you can type follow-up questions about the dashboard in the box below it.
-
 ![Revenue Pulse artifact in CoWork with filters, page tabs, KPI sparklines, and the follow-up box](assets/cowork-artifact.png)
+
+### Ask a Follow-Up Question
+
+In the box below the dashboard, ask:
+
+```
+Why is EMEA Enterprise behind target in Q3 2026? Quantify the drivers.
+```
+
+CoWork runs queries against the same data and answers in a side panel, with a table of the drivers behind the miss. In the run below, it found EMEA Enterprise finished Q3 2026 about $779K below target, at 57.9% attainment. Renewal delays explained about 44% of the shortfall, a contract downsize about 33%, and discounts and service credits about 23%. Your answer may be worded differently, but the numbers come from the same data.
+
+![Animated demo of the Revenue Pulse dashboard in CoWork: scrolling the KPI tiles and charts, clicking a region to filter every chart, and asking why EMEA Enterprise is behind target, which returns a table of the drivers behind the shortfall](assets/snowflake-dashboards-demo.gif)
+
+Try a follow-up of your own, such as which accounts to call first, or how EMEA Enterprise compares with the same quarter last year.
 
 ## Clean Up
 
 When you're done:
 
-1. If you published the dashboard, remove its roles in **Share** and delete the artifact in CoWork.
+1. Remove the dashboard's roles in **Share** and delete the Revenue Pulse artifact in CoWork.
 2. Upload `cleanup.sql`, open it, and select **Run All** with the same role you used for `setup.sql`. It drops the four objects the setup created and leaves your schema in place:
 
 ```sql
@@ -158,13 +170,14 @@ DROP TABLE IF EXISTS CUSTOMERS;
 
 ## Conclusion And Resources
 
-You loaded a dataset, opened a dashboard file, and traced a $1.09M revenue gap to EMEA Enterprise, with no building required. The `.dash` file you opened holds every tile, filter, chart action, and SQL query, so it's easy to version, share, and reuse.
+You loaded a dataset, deployed a dashboard file, traced a $1.09M revenue gap to EMEA Enterprise, and asked CoWork why it happened. The `.dash` file you opened holds every tile, filter, chart action, and SQL query, so it's easy to version, share, and reuse.
 
 ### What You Learned
 - One SQL file can set up the tables and semantic view a dashboard needs
 - A `.dash` file opens in Workspaces as a working dashboard
 - Brushing, click-to-filter, and hierarchy drilldown let you move from a headline number to the accounts behind it
 - Published dashboards run with each viewer's own privileges
+- In CoWork, you can ask follow-up questions about a dashboard and get answers from the same data
 
 ### Related Resources
 - [Dashboards in Snowflake CoWork](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards)
