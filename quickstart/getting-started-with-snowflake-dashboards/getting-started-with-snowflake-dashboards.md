@@ -2,7 +2,7 @@ author: Chanin Nantasenamat
 id: getting-started-with-snowflake-dashboards
 categories: snowflake-site:taxonomy/solution-center/certification/quickstart, snowflake-site:taxonomy/product/analytics
 language: en
-summary: Load a synthetic revenue dataset with one SQL file, open a pre-made Snowflake Dashboards file, and explore filters, drilldown, and chart actions in under a minute.
+summary: Load a synthetic revenue dataset with one SQL file, open a pre-made Snowflake Dashboards file, and explore filters, drilldown, and chart actions in a few minutes.
 environments: web
 status: Draft
 feedback link: https://github.com/Snowflake-Labs/sfquickstarts/issues
@@ -12,12 +12,13 @@ fork repo link: https://github.com/sfc-gh-cnantasenamat/sfguide-getting-started-
 
 ## Overview
 
-Most dashboard tutorials make you build something before you see anything. This one works the other way round. You run one SQL file and open one dashboard file, and within a minute you're clicking through a working revenue dashboard. Once you've seen what [Snowflake Dashboards](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards) can do, Part 2 shows you how to build the same dashboard from scratch.
+A revenue number that misses target raises questions right away. Which region is behind? Which segment? Which accounts? On many teams the answers live in exported spreadsheets or static report decks. They go stale as soon as the data changes, and every follow-up question means another export or another request to an analyst.
+
+[Snowflake Dashboards](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards) keep the answers next to the data. A dashboard is a single `.dash` file in Snowsight Workspaces. Each tile runs live SQL against tables or a semantic view in your account. Filters, chart actions, and hierarchy drilldowns let you go from a headline number to the rows behind it without leaving the page. You can then publish the dashboard so colleagues can open it in Snowflake CoWork.
+
+This tutorial skips the building and starts with a finished dashboard, so you see what Snowflake Dashboards can do in a few minutes. You'll download three files and point them at a schema you already have. One SQL file loads a small synthetic dataset and a semantic view in about 10 seconds. Then you open the dashboard file and use it to investigate a revenue shortfall: brush a date range on the trend, click a region to filter every chart, and drill from region to segment to account. Optionally, you publish it for others. A cleanup script removes everything at the end.
 
 The dashboard is **Revenue Pulse**. It runs on synthetic data for a fictional B2B software company: 54 accounts, 3 product lines, and 24 months of revenue through September 30, 2026. The data has a story built in. Q3 2026 revenue is $1.09M behind target, and most of the gap sits in EMEA Enterprise.
-
-![Overview tab of the Revenue Pulse dashboard with KPI sparklines, a monthly trend, regional bars, a heatmap, and driver and account charts](assets/dashboard-complete.png)
-
 ### What You'll Learn
 - How to load a small demo dataset and semantic view with one SQL file
 - How to open a `.dash` file in Snowsight Workspaces
@@ -26,6 +27,8 @@ The dashboard is **Revenue Pulse**. It runs on synthetic data for a fictional B2
 
 ### What You'll Build
 You'll have a four-tab Revenue Pulse dashboard running on live queries in your own account. The tabs are **Overview**, **Hierarchical Chart**, **Hierarchical Table**, and **Data Source**.
+
+![Overview tab of the Revenue Pulse dashboard with KPI sparklines, a monthly trend, regional bars, a heatmap, and driver and account charts](assets/dashboard-complete.png)
 
 ### What You'll Need
 - Access to a [Snowflake account](https://signup.snowflake.com/?utm_source=snowflake-devrel&utm_medium=developer-guides&utm_cta=developer-guides)
@@ -160,9 +163,6 @@ You loaded a dataset, opened a dashboard file, and traced a $1.09M revenue gap t
 - A `.dash` file opens in Workspaces as a working dashboard
 - Brushing, click-to-filter, and hierarchy drilldown let you move from a headline number to the accounts behind it
 - Published dashboards run with each viewer's own privileges
-
-### Next: Build It Yourself
-In Part 2, [Build Snowflake Dashboards with CoCo](https://github.com/sfc-gh-cnantasenamat/sfguide-build-snowflake-dashboards-with-coco), you build this dashboard from scratch with Cortex Code prompts. Along the way you also add a Cortex Agent, publish to a least-privilege role, and ask CoWork why the numbers moved.
 
 ### Related Resources
 - [Dashboards in Snowflake CoWork](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards)
