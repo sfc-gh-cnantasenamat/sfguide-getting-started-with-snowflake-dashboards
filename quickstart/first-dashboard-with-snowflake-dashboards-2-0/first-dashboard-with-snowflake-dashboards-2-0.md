@@ -36,20 +36,20 @@ Everything runs in Snowsight. You don't need Python, a CLI, or a Git integration
 
 ## Get the Two Files
 
-Download these two files from the [companion repository](https://github.com/sfc-gh-cnantasenamat/sfguide-first-dashboard-with-snowflake-dashboards-2-0):
+Download these two files from the [companion repository](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards-2-0):
 
 | File | What it does |
 |---|---|
-| [`sql/setup.sql`](https://github.com/sfc-gh-cnantasenamat/sfguide-first-dashboard-with-snowflake-dashboards-2-0/blob/main/sql/setup.sql) | Creates `REVENUE_PULSE_DB.DASHBOARD_DEMO`, three tables of synthetic data, and the `REVENUE_SEMANTIC_VIEW` semantic view |
-| [`dashboards/revenue_pulse.dash`](https://github.com/sfc-gh-cnantasenamat/sfguide-first-dashboard-with-snowflake-dashboards-2-0/blob/main/dashboards/revenue_pulse.dash) | The finished dashboard: tiles, filters, layout, and SQL in one file |
+| [`sql/quick_setup.sql`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards-2-0/blob/main/sql/quick_setup.sql) | Creates `REVENUE_PULSE_DB.DASHBOARD_DEMO`, three tables of synthetic data, and the `REVENUE_SEMANTIC_VIEW` semantic view |
+| [`dashboards/revenue_pulse.dash`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards-2-0/blob/main/dashboards/revenue_pulse.dash) | The finished dashboard: tiles, filters, layout, and SQL in one file |
 
 On each file's GitHub page, select **Download raw file**.
 
 ## Load the Data
 
 1. In Snowsight, go to **Projects » Workspaces**.
-2. In **My Workspace**, select **+ Add New » Upload Files** and upload `setup.sql`.
-3. Open `setup.sql`. In the editor, pick your role and a warehouse.
+2. In **My Workspace**, select **+ Add New » Upload Files** and upload `quick_setup.sql`.
+3. Open `quick_setup.sql`. In the editor, pick your role and a warehouse.
 4. Select **Run All**.
 
 The script finishes in about 10 seconds. Its last statement returns one row:
@@ -123,7 +123,7 @@ When you're done, remove the demo objects:
 DROP DATABASE IF EXISTS REVENUE_PULSE_DB;
 ```
 
-Delete `setup.sql` and `revenue_pulse.dash` from your workspace. If you published the dashboard, remove its roles in **Share** and delete the artifact in CoWork.
+Delete `quick_setup.sql` and `revenue_pulse.dash` from your workspace. If you published the dashboard, remove its roles in **Share** and delete the artifact in CoWork.
 
 ## Conclusion And Resources
 
