@@ -29,7 +29,7 @@ You'll have a four-tab Revenue Pulse dashboard running on live queries in your o
 
 ### What You'll Need
 - Access to a [Snowflake account](https://signup.snowflake.com/?utm_source=snowflake-devrel&utm_medium=developer-guides&utm_cta=developer-guides)
-- A role with the `CREATE DATABASE` privilege on the account (for example, `SYSADMIN`), and `USAGE` on a warehouse. That role owns everything the setup creates, so it needs no other grants, and the same role runs the cleanup
+- An existing schema you can create objects in, and a warehouse you can use. You don't need `ACCOUNTADMIN`, `SYSADMIN`, or the right to create a database. If you own the schema, you already have everything the setup needs: `USAGE` on its database, plus `CREATE TABLE` and `CREATE SEMANTIC VIEW` on the schema. The same role runs the cleanup
 - Access to [Snowflake Dashboards](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards) (public preview) in Snowsight Workspaces
 
 Everything runs in Snowsight. You don't need Python, a CLI, or a Git integration.
@@ -40,11 +40,17 @@ The three files you need are in the `getting-started/` folder of the [companion 
 
 | File | What it does |
 |---|---|
-| [`setup.sql`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/blob/main/getting-started/setup.sql) | Creates `REVENUE_PULSE_DB.DASHBOARD_DEMO`, three tables of synthetic data, and the `REVENUE_SEMANTIC_VIEW` semantic view |
+| [`setup.sql`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/blob/main/getting-started/setup.sql) | Creates three tables of synthetic data and the `REVENUE_SEMANTIC_VIEW` semantic view in your schema |
 | [`revenue_pulse.dash`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/blob/main/getting-started/revenue_pulse.dash) | The finished dashboard: tiles, filters, layout, and SQL in one file |
-| [`cleanup.sql`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/blob/main/getting-started/cleanup.sql) | Drops everything `setup.sql` created, for when you're done |
+| [`cleanup.sql`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/blob/main/getting-started/cleanup.sql) | Drops the four objects `setup.sql` created, for when you're done |
 
 On each file's GitHub page, select **Download raw file**.
+
+### Point the Files at Your Schema
+
+The files use the schema `TEMP.CNANTASENAMAT`. To use your own, open all three files in a text editor and replace every `TEMP.CNANTASENAMAT` with your `DATABASE.SCHEMA`, for example `ANALYTICS.MY_SANDBOX`. Do this before uploading them.
+
+> Pick a schema that doesn't already contain tables named `CUSTOMERS`, `PRODUCTS`, or `REVENUE_MONTHLY`, or a semantic view named `REVENUE_SEMANTIC_VIEW`. The setup replaces objects with those names.
 
 ## Load the Data
 
@@ -59,7 +65,7 @@ The script finishes in about 10 seconds. Its last statement returns one row:
 |---|---|---|
 | 54 | 3 | 3888 |
 
-If you see those numbers, the data is ready. The script is safe to run again: it replaces the tables each time.
+If you see those numbers, the data is ready. The script is safe to run again: it replaces the tables and semantic view each time, and keeps any grants you've added to them.
 
 > **Note:** The revenue rows are packed into one `INSERT` to keep the file small. You don't need to read it. The table definitions at the top and the semantic view at the bottom are the parts worth a look.
 
@@ -121,10 +127,13 @@ In CoWork you can type follow-up questions about the dashboard in the box below 
 When you're done:
 
 1. If you published the dashboard, remove its roles in **Share** and delete the artifact in CoWork.
-2. Upload `cleanup.sql`, open it, and select **Run All** with the same role you used for `setup.sql`. It runs one statement, which drops `REVENUE_PULSE_DB` along with its schema, tables, and semantic view:
+2. Upload `cleanup.sql`, open it, and select **Run All** with the same role you used for `setup.sql`. It drops the four objects the setup created and leaves your schema in place:
 
 ```sql
-DROP DATABASE IF EXISTS REVENUE_PULSE_DB;
+DROP SEMANTIC VIEW IF EXISTS TEMP.CNANTASENAMAT.REVENUE_SEMANTIC_VIEW;
+DROP TABLE IF EXISTS TEMP.CNANTASENAMAT.REVENUE_MONTHLY;
+DROP TABLE IF EXISTS TEMP.CNANTASENAMAT.PRODUCTS;
+DROP TABLE IF EXISTS TEMP.CNANTASENAMAT.CUSTOMERS;
 ```
 
 3. Delete `setup.sql`, `revenue_pulse.dash`, and `cleanup.sql` from your workspace.
