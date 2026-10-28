@@ -8,7 +8,7 @@ status: Draft
 feedback link: https://github.com/Snowflake-Labs/sfquickstarts/issues
 fork repo link: https://github.com/sfc-gh-cnantasenamat/sfguide-first-dashboard-with-snowflake-dashboards-2-0
 
-# Your First Snowflake Dashboards Dashboard
+# Getting Started with Snowflake Dashboards
 
 ## Overview
 
@@ -136,7 +136,7 @@ You loaded a dataset, opened a dashboard file, and traced a $1.09M revenue gap t
 - Published dashboards run with each viewer's own privileges
 
 ### Next: Build It Yourself
-In Part 2, [Getting Started with Snowflake Dashboards](https://github.com/sfc-gh-cnantasenamat/sfguide-getting-started-with-snowflake-dashboards-2-0), you build this dashboard from scratch with Cortex Code prompts. Along the way you also add a Cortex Agent, publish to a least-privilege role, and ask CoWork why the numbers moved.
+In Part 2, [Build Snowflake Dashboards with CoCo](https://github.com/sfc-gh-cnantasenamat/sfguide-getting-started-with-snowflake-dashboards-2-0), you build this dashboard from scratch with Cortex Code prompts. Along the way you also add a Cortex Agent, publish to a least-privilege role, and ask CoWork why the numbers moved.
 
 ### Related Resources
 - [Dashboards in Snowflake CoWork](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards)
