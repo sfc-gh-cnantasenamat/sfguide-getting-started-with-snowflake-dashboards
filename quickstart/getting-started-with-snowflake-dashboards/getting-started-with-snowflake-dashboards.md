@@ -48,10 +48,17 @@ On each file's GitHub page, select **Download raw file**.
 
 ### Point the Files at Your Schema
 
-The files work in the schema `TEMP.CNANTASENAMAT`. Point them at your own working database and schema before uploading:
+`TEMP` and `CNANTASENAMAT` are the author's own database and schema, used here as placeholders. Replace them with a database and schema of your choice that you can create objects in. Do this before uploading the files.
 
-1. In `setup.sql` and `cleanup.sql`, edit the two `USE` lines near the top. For example, change `USE DATABASE TEMP;` and `USE SCHEMA CNANTASENAMAT;` to `USE DATABASE ANALYTICS;` and `USE SCHEMA MY_SANDBOX;`. Everything after those lines uses names relative to that schema.
-2. In `revenue_pulse.dash`, replace every `TEMP.CNANTASENAMAT` with your `DATABASE.SCHEMA`, for example `ANALYTICS.MY_SANDBOX`. The dashboard's queries use fully qualified names, so they work for anyone you share it with.
+1. In `setup.sql` and `cleanup.sql`, replace `TEMP` and `CNANTASENAMAT` in the two `USE` lines near the top. Each line has a comment marking what to replace:
+
+   ```sql
+   USE DATABASE TEMP;   -- Replace TEMP with your own database
+   USE SCHEMA CNANTASENAMAT;   -- Replace CNANTASENAMAT with your own schema in that database
+   ```
+
+   For example, `USE DATABASE ANALYTICS;` and `USE SCHEMA MY_SANDBOX;`. Everything after these lines uses names relative to that schema.
+2. In `revenue_pulse.dash`, replace every `TEMP.CNANTASENAMAT` with your own `DATABASE.SCHEMA`, for example `ANALYTICS.MY_SANDBOX`. The dashboard's queries use fully qualified names, so they work for anyone you share it with.
 
 > Pick a schema that doesn't already contain tables named `CUSTOMERS`, `PRODUCTS`, or `REVENUE_MONTHLY`, or a semantic view named `REVENUE_SEMANTIC_VIEW`. The setup replaces objects with those names.
 
@@ -133,8 +140,8 @@ When you're done:
 2. Upload `cleanup.sql`, open it, and select **Run All** with the same role you used for `setup.sql`. It drops the four objects the setup created and leaves your schema in place:
 
 ```sql
-USE DATABASE TEMP;
-USE SCHEMA CNANTASENAMAT;
+USE DATABASE TEMP;   -- Replace TEMP with your own database
+USE SCHEMA CNANTASENAMAT;   -- Replace CNANTASENAMAT with your own schema in that database
 
 DROP SEMANTIC VIEW IF EXISTS REVENUE_SEMANTIC_VIEW;
 DROP TABLE IF EXISTS REVENUE_MONTHLY;
