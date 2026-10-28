@@ -2,17 +2,17 @@ author: Chanin Nantasenamat
 id: first-dashboard-with-snowflake-dashboards-2-0
 categories: snowflake-site:taxonomy/solution-center/certification/quickstart, snowflake-site:taxonomy/product/analytics
 language: en
-summary: Load a synthetic revenue dataset with one SQL file, open a pre-made Snowflake Dashboards 2.0 file, and explore filters, drilldown, and chart actions in under a minute.
+summary: Load a synthetic revenue dataset with one SQL file, open a pre-made Snowflake Dashboards file, and explore filters, drilldown, and chart actions in under a minute.
 environments: web
 status: Draft
 feedback link: https://github.com/Snowflake-Labs/sfquickstarts/issues
 fork repo link: https://github.com/sfc-gh-cnantasenamat/sfguide-first-dashboard-with-snowflake-dashboards-2-0
 
-# Your First Snowflake Dashboards 2.0 Dashboard
+# Your First Snowflake Dashboards Dashboard
 
 ## Overview
 
-Most dashboard tutorials make you build something before you see anything. This one works the other way round. You run one SQL file and open one dashboard file, and within a minute you're clicking through a working revenue dashboard. Once you've seen what [Dashboards 2.0](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards) can do, Part 2 shows you how to build the same dashboard from scratch.
+Most dashboard tutorials make you build something before you see anything. This one works the other way round. You run one SQL file and open one dashboard file, and within a minute you're clicking through a working revenue dashboard. Once you've seen what [Snowflake Dashboards](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards) can do, Part 2 shows you how to build the same dashboard from scratch.
 
 The dashboard is **Revenue Pulse**. It runs on synthetic data for a fictional B2B software company: 54 accounts, 3 product lines, and 24 months of revenue through September 30, 2026. The data has a story built in. Q3 2026 revenue is $1.09M behind target, and most of the gap sits in EMEA Enterprise.
 
@@ -30,7 +30,7 @@ You'll have a four-tab Revenue Pulse dashboard running on live queries in your o
 ### What You'll Need
 - Access to a [Snowflake account](https://signup.snowflake.com/?utm_source=snowflake-devrel&utm_medium=developer-guides&utm_cta=developer-guides)
 - A role that can create a database and a semantic view (for example, `SYSADMIN` or `ACCOUNTADMIN`), and a warehouse you can use
-- Access to [Dashboards 2.0](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards) (public preview) in Snowsight Workspaces
+- Access to [Snowflake Dashboards](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards) (public preview) in Snowsight Workspaces
 
 Everything runs in Snowsight. You don't need Python, a CLI, or a Git integration.
 
@@ -136,7 +136,7 @@ You loaded a dataset, opened a dashboard file, and traced a $1.09M revenue gap t
 - Published dashboards run with each viewer's own privileges
 
 ### Next: Build It Yourself
-In Part 2, [Getting Started with Snowflake Dashboards 2.0](https://github.com/sfc-gh-cnantasenamat/sfguide-getting-started-with-snowflake-dashboards-2-0), you build this dashboard from scratch with Cortex Code prompts. Along the way you also add a Cortex Agent, publish to a least-privilege role, and ask CoWork why the numbers moved.
+In Part 2, [Getting Started with Snowflake Dashboards](https://github.com/sfc-gh-cnantasenamat/sfguide-getting-started-with-snowflake-dashboards-2-0), you build this dashboard from scratch with Cortex Code prompts. Along the way you also add a Cortex Agent, publish to a least-privilege role, and ask CoWork why the numbers moved.
 
 ### Related Resources
 - [Dashboards in Snowflake CoWork](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards)
