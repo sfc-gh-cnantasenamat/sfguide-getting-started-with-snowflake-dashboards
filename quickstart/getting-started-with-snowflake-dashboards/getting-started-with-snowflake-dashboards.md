@@ -116,7 +116,9 @@ Click the **EMEA** bar on **Variance to Target by Region**. The other tiles filt
 ![Regional variance bars after clicking EMEA, with the other tiles filtered to that region](assets/regional-bar-filter-emea.png)
 
 ### Click a Heatmap Cell
-On **Target Attainment**, the darkest cell is EMEA Enterprise at **57.9%**. Click it to filter the rest of the dashboard to that region and segment.
+On **Target Attainment**, the darkest cell is EMEA Enterprise at **57.9%**. Click it to filter the rest of the dashboard to that region and segment. Region and segment chips appear in the filter bar, and the scorecards update to that slice: about $1.1M net revenue, 57.9% attainment, and a variance of about −$779K.
+
+![Dashboard after selecting the EMEA Enterprise heatmap cell: Region EMEA and Segment Enterprise chips appear, and the scorecards show $1.1M net revenue, 57.9% attainment, and a variance of about −$779K](assets/heatmap-cell-filter.png)
 
 ### Drill the Hierarchy
 Open the **Hierarchical Chart** tab. Click **EMEA**, then **Enterprise**, to reach its six accounts. The largest miss is Demo EMEA Enterprise 05, at about −$349K. Use the level trail to return to the top.
