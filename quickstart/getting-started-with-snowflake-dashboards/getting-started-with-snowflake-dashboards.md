@@ -29,27 +29,28 @@ You'll have a four-tab Revenue Pulse dashboard running on live queries in your o
 
 ### What You'll Need
 - Access to a [Snowflake account](https://signup.snowflake.com/?utm_source=snowflake-devrel&utm_medium=developer-guides&utm_cta=developer-guides)
-- A role that can create a database and a semantic view (for example, `SYSADMIN` or `ACCOUNTADMIN`), and a warehouse you can use
+- A role with the `CREATE DATABASE` privilege on the account (for example, `SYSADMIN`), and `USAGE` on a warehouse. That role owns everything the setup creates, so it needs no other grants, and the same role runs the cleanup
 - Access to [Snowflake Dashboards](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards) (public preview) in Snowsight Workspaces
 
 Everything runs in Snowsight. You don't need Python, a CLI, or a Git integration.
 
-## Get the Two Files
+## Get the Files
 
-Download these two files from the [companion repository](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards):
+The three files you need are in the `getting-started/` folder of the [companion repository](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/tree/main/getting-started):
 
 | File | What it does |
 |---|---|
-| [`sql/quick_setup.sql`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/blob/main/sql/quick_setup.sql) | Creates `REVENUE_PULSE_DB.DASHBOARD_DEMO`, three tables of synthetic data, and the `REVENUE_SEMANTIC_VIEW` semantic view |
-| [`dashboards/revenue_pulse.dash`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/blob/main/dashboards/revenue_pulse.dash) | The finished dashboard: tiles, filters, layout, and SQL in one file |
+| [`setup.sql`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/blob/main/getting-started/setup.sql) | Creates `REVENUE_PULSE_DB.DASHBOARD_DEMO`, three tables of synthetic data, and the `REVENUE_SEMANTIC_VIEW` semantic view |
+| [`revenue_pulse.dash`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/blob/main/getting-started/revenue_pulse.dash) | The finished dashboard: tiles, filters, layout, and SQL in one file |
+| [`cleanup.sql`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/blob/main/getting-started/cleanup.sql) | Drops everything `setup.sql` created, for when you're done |
 
 On each file's GitHub page, select **Download raw file**.
 
 ## Load the Data
 
 1. In Snowsight, go to **Projects » Workspaces**.
-2. In **My Workspace**, select **+ Add New » Upload Files** and upload `quick_setup.sql`.
-3. Open `quick_setup.sql`. In the editor, pick your role and a warehouse.
+2. In **My Workspace**, select **+ Add New » Upload Files** and upload `setup.sql`.
+3. Open `setup.sql`. In the editor, pick your role and a warehouse.
 4. Select **Run All**.
 
 The script finishes in about 10 seconds. Its last statement returns one row:
@@ -117,13 +118,16 @@ In CoWork you can type follow-up questions about the dashboard in the box below 
 
 ## Clean Up
 
-When you're done, remove the demo objects:
+When you're done:
+
+1. If you published the dashboard, remove its roles in **Share** and delete the artifact in CoWork.
+2. Upload `cleanup.sql`, open it, and select **Run All** with the same role you used for `setup.sql`. It runs one statement, which drops `REVENUE_PULSE_DB` along with its schema, tables, and semantic view:
 
 ```sql
 DROP DATABASE IF EXISTS REVENUE_PULSE_DB;
 ```
 
-Delete `quick_setup.sql` and `revenue_pulse.dash` from your workspace. If you published the dashboard, remove its roles in **Share** and delete the artifact in CoWork.
+3. Delete `setup.sql`, `revenue_pulse.dash`, and `cleanup.sql` from your workspace.
 
 ## Conclusion And Resources
 
