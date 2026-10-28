@@ -16,8 +16,6 @@ A revenue number that misses target raises questions right away. Which region is
 
 [Snowflake Dashboards](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards) keep the answers next to the data. A dashboard is a single `.dash` file in Snowsight Workspaces. Each tile runs live SQL against tables or a semantic view in your account. Filters, chart actions, and hierarchy drilldowns let you go from a headline number to the rows behind it without leaving the page. You can then publish the dashboard so colleagues can open it in Snowflake CoWork.
 
-This tutorial skips the building and starts with a finished dashboard, so you see what Snowflake Dashboards can do in a few minutes. You'll download three files and point them at a schema you already have. One SQL file loads a small synthetic dataset and a semantic view in about 10 seconds. Then you open the dashboard file and use it to investigate a revenue shortfall: brush a date range on the trend, click a region to filter every chart, and drill from region to segment to account. Optionally, you publish it for others. A cleanup script removes everything at the end.
-
 The dashboard is **Revenue Pulse**. It runs on synthetic data for a fictional B2B software company: 54 accounts, 3 product lines, and 24 months of revenue through September 30, 2026. The data has a story built in. Q3 2026 revenue is $1.09M behind target, and most of the gap sits in EMEA Enterprise.
 ### What You'll Learn
 - How to load a small demo dataset and semantic view with one SQL file
@@ -26,7 +24,9 @@ The dashboard is **Revenue Pulse**. It runs on synthetic data for a fictional B2
 - How to publish a dashboard so others can open it in Snowflake CoWork
 
 ### What You'll Build
-You'll have a four-tab Revenue Pulse dashboard running on live queries in your own account. The tabs are **Overview**, **Hierarchical Chart**, **Hierarchical Table**, and **Data Source**.
+You'll set up the data and deploy a ready-made dashboard in your own account, so you get value from it right away. You'll download three files and point them at a schema you already have. One SQL file loads a small synthetic dataset and a semantic view in about 10 seconds. Then you upload the dashboard file to Workspaces and use it to investigate a revenue shortfall: brush a date range on the trend, click a region to filter every chart, and drill from region to segment to account. Optionally, you publish it for others. A cleanup script removes everything at the end.
+
+The result is a four-tab Revenue Pulse dashboard running on live queries. The tabs are **Overview**, **Hierarchical Chart**, **Hierarchical Table**, and **Data Source**.
 
 ![Overview tab of the Revenue Pulse dashboard with KPI sparklines, a monthly trend, regional bars, a heatmap, and driver and account charts](assets/dashboard-complete.png)
 
