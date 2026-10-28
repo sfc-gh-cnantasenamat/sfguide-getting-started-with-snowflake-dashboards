@@ -41,7 +41,7 @@ The result is a four-tab Revenue Pulse dashboard running on live queries. The ta
 
 ### What You'll Need
 - Access to a [Snowflake account](https://signup.snowflake.com/?utm_source=snowflake-devrel&utm_medium=developer-guides&utm_cta=developer-guides)
-- An existing schema you can create objects in, and a warehouse you can use. You don't need `ACCOUNTADMIN`, `SYSADMIN`, or any database-level privilege, because the setup doesn't create a database or schema. Your role needs `USAGE` on the database and schema, plus `CREATE TABLE` and `CREATE SEMANTIC VIEW` on the schema. If your role owns the schema, it already has these. The same role runs the cleanup
+- An existing schema you can create objects in, and a warehouse you can use. Your role needs `USAGE` on the database and schema, plus `CREATE TABLE` and `CREATE SEMANTIC VIEW` on the schema. If your role owns the schema, it already has these. The same role runs the cleanup
 - Access to [Snowflake Dashboards](https://docs.snowflake.com/en/LIMITEDACCESS/cowork-dashboards) (public preview) in Snowsight Workspaces
 
 Everything runs in Snowsight. You don't need Python, a CLI, or a Git integration.
