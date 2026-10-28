@@ -48,7 +48,10 @@ On each file's GitHub page, select **Download raw file**.
 
 ### Point the Files at Your Schema
 
-The files use the schema `TEMP.CNANTASENAMAT`. To use your own, open all three files in a text editor and replace every `TEMP.CNANTASENAMAT` with your `DATABASE.SCHEMA`, for example `ANALYTICS.MY_SANDBOX`. Do this before uploading them.
+The files work in the schema `TEMP.CNANTASENAMAT`. Point them at your own working database and schema before uploading:
+
+1. In `setup.sql` and `cleanup.sql`, edit the two `USE` lines near the top. For example, change `USE DATABASE TEMP;` and `USE SCHEMA CNANTASENAMAT;` to `USE DATABASE ANALYTICS;` and `USE SCHEMA MY_SANDBOX;`. Everything after those lines uses names relative to that schema.
+2. In `revenue_pulse.dash`, replace every `TEMP.CNANTASENAMAT` with your `DATABASE.SCHEMA`, for example `ANALYTICS.MY_SANDBOX`. The dashboard's queries use fully qualified names, so they work for anyone you share it with.
 
 > Pick a schema that doesn't already contain tables named `CUSTOMERS`, `PRODUCTS`, or `REVENUE_MONTHLY`, or a semantic view named `REVENUE_SEMANTIC_VIEW`. The setup replaces objects with those names.
 
@@ -130,10 +133,13 @@ When you're done:
 2. Upload `cleanup.sql`, open it, and select **Run All** with the same role you used for `setup.sql`. It drops the four objects the setup created and leaves your schema in place:
 
 ```sql
-DROP SEMANTIC VIEW IF EXISTS TEMP.CNANTASENAMAT.REVENUE_SEMANTIC_VIEW;
-DROP TABLE IF EXISTS TEMP.CNANTASENAMAT.REVENUE_MONTHLY;
-DROP TABLE IF EXISTS TEMP.CNANTASENAMAT.PRODUCTS;
-DROP TABLE IF EXISTS TEMP.CNANTASENAMAT.CUSTOMERS;
+USE DATABASE TEMP;
+USE SCHEMA CNANTASENAMAT;
+
+DROP SEMANTIC VIEW IF EXISTS REVENUE_SEMANTIC_VIEW;
+DROP TABLE IF EXISTS REVENUE_MONTHLY;
+DROP TABLE IF EXISTS PRODUCTS;
+DROP TABLE IF EXISTS CUSTOMERS;
 ```
 
 3. Delete `setup.sql`, `revenue_pulse.dash`, and `cleanup.sql` from your workspace.
