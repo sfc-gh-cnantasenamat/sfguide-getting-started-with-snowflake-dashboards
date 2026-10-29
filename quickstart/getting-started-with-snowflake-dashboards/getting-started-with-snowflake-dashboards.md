@@ -50,7 +50,7 @@ The result is a four-tab Revenue Pulse dashboard running on live queries. The ta
 
 Everything runs in Snowsight. You don't need Python, a CLI, or a Git integration.
 
-## Get the Files
+## Setup
 
 The three files you need are in the `getting-started/` folder of the [companion repository](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/tree/main/getting-started):
 
