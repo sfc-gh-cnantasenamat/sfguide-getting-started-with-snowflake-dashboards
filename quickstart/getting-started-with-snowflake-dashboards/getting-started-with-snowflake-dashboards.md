@@ -35,6 +35,10 @@ You'll set up the data and deploy a ready-made dashboard in your own account, so
 5. **Ask why in CoWork:** publish the dashboard to Snowflake CoWork and ask why the numbers moved.
 6. **Clean up:** run a cleanup script that removes everything.
 
+The diagram shows how the pieces fit together. `setup.sql` creates three tables and a semantic view on top of them. The dashboard queries the semantic view, and publishing it creates a CoWork artifact that a viewer role can open. `cleanup.sql` removes the tables and semantic view.
+
+![Architecture of the tutorial: setup.sql creates the CUSTOMERS, PRODUCTS, and REVENUE_MONTHLY tables, which feed REVENUE_SEMANTIC_VIEW. revenue_pulse.dash selects from the semantic view, is published as the Revenue Pulse CoWork artifact, and is shared with a viewer role that has Can view access and SELECT. Follow-up questions in CoWork query the semantic view with the viewer's privileges. cleanup.sql drops the semantic view and tables](assets/architecture.png)
+
 The result is a four-tab Revenue Pulse dashboard running on live queries. The tabs are **Overview**, **Hierarchical Chart**, **Hierarchical Table**, and **Data Source**.
 
 ![Overview tab of the Revenue Pulse dashboard with KPI sparklines, a monthly trend, regional bars, a heatmap, and driver and account charts](assets/dashboard-complete.png)
