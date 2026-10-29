@@ -28,12 +28,11 @@ The dashboard we're building is called **Revenue Pulse**. It runs on synthetic d
 ### What You'll Build
 You'll set up the data and deploy a ready-made dashboard in your own account, so you get value from it right away:
 
-1. **Get the files:** download three files and point them at a schema you already have.
-2. **Load the data:** run one SQL file that loads a small synthetic dataset and a semantic view in about 10 seconds.
-3. **Deploy the dashboard:** upload the dashboard file to Workspaces and open it.
-4. **Investigate the shortfall:** brush a date range on the trend, click a region to filter every chart, and drill from region to segment to account.
-5. **Ask why in CoWork:** publish the dashboard to Snowflake CoWork and ask why the numbers moved.
-6. **Clean up:** run a cleanup script that removes everything.
+1. **Setup:** download three files, point them at a schema you already have, and run one SQL file that loads a small synthetic dataset and a semantic view in about 10 seconds.
+2. **Deploy the dashboard:** upload the dashboard file to Workspaces and open it.
+3. **Investigate the shortfall:** brush a date range on the trend, click a region to filter every chart, and drill from region to segment to account.
+4. **Ask why in CoWork:** publish the dashboard to Snowflake CoWork and ask why the numbers moved.
+5. **Clean up:** run a cleanup script that removes everything.
 
 The diagram shows how the pieces fit together. `setup.sql` creates three tables and a semantic view on top of them. The dashboard queries the semantic view, and publishing it creates a CoWork artifact that a viewer role can open. `cleanup.sql` removes the tables and semantic view.
 
