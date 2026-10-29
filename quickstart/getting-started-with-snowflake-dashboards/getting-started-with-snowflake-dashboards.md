@@ -78,7 +78,7 @@ On each file's GitHub page, select **Download raw file**.
 
 > Pick a schema that doesn't already contain tables named `CUSTOMERS`, `PRODUCTS`, or `REVENUE_MONTHLY`, or a semantic view named `REVENUE_SEMANTIC_VIEW`. The setup replaces objects with those names.
 
-## Load the Data
+### Load the Data
 
 1. In Snowsight, go to **Projects » Workspaces**.
 2. In **My Workspace**, select **+ Add New » Upload Files** and upload `setup.sql`.
@@ -95,17 +95,15 @@ If you see those numbers, the data is ready. The script is safe to run again: it
 
 > **Note:** The revenue rows are packed into one `INSERT` to keep the file small. You don't need to read it. The table definitions at the top and the semantic view at the bottom are the parts worth a look.
 
-## Open the Dashboard
+## Explore the Dashboard
+
+### Open the Dashboard
 
 1. Select **+ Add New » Upload Files** again and upload `revenue_pulse.dash`.
 2. Open `revenue_pulse.dash`. Snowsight renders it as a dashboard rather than as text.
 3. Select **Run all** if the tiles don't load on their own.
 
 The KPI row shows the Q3 2026 headline: net revenue of **$6.9M**, up 0.8% year over year, **86.3%** target attainment, a variance of about **−$1.09M** (the card rounds it to −$1M), and 71% gross margin.
-
-That's the whole setup. Everything from here is exploring.
-
-## Explore the Dashboard
 
 ![Animated demo of the Revenue Pulse dashboard: scrolling the KPI tiles and charts, then clicking a region on the variance bars to filter the other charts](assets/dashboard-chart-actions.gif)
 
