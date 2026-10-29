@@ -105,6 +105,8 @@ If you see those numbers, the data is ready. The script is safe to run again: it
 
 The KPI row shows the Q3 2026 headline: net revenue of **$6.9M**, up 0.8% year over year, **86.3%** target attainment, a variance of about **−$1.09M** (the card rounds it to −$1M), and 71% gross margin.
 
+The dashboard isn't a static report: every chart doubles as a filter. The animation below scrolls from the KPI cards through the trend, regional, heatmap, driver, and account charts. It then clicks a region on the variance-by-region chart, and the rest of the dashboard narrows to that region. That click is one of several chart actions. In the next sections you'll brush a date range on the trend, click a region or heatmap cell to filter every chart, and drill down from region to segment to account.
+
 ![Animated demo of the Revenue Pulse dashboard: scrolling the KPI tiles and charts, then clicking a region on the variance bars to filter the other charts](assets/dashboard-chart-actions.gif)
 
 Try each of these on the **Overview** tab, and clear the selection before the next one.
