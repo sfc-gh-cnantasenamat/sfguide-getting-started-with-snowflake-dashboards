@@ -6,7 +6,7 @@ summary: Load a synthetic revenue dataset with one SQL file, open a pre-made Sno
 environments: web
 status: Draft
 feedback link: https://github.com/Snowflake-Labs/sfquickstarts/issues
-fork repo link: https://github.com/sfc-gh-cnantasenamat/sfguide-getting-started-with-snowflake-dashboards
+fork repo link: https://github.com/Snowflake-Labs/getting-started-with-snowflake-dashboards
 
 # Getting Started with Snowflake Dashboards
 
