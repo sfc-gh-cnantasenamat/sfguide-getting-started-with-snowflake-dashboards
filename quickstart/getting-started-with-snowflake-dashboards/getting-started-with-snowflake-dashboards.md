@@ -51,13 +51,13 @@ Everything runs in Snowsight. You don't need Python, a CLI, or a Git integration
 
 ## Setup
 
-The three files you need are in the `getting-started/` folder of the [companion repository](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/tree/main/getting-started):
+The three files you need are in the `getting-started/` folder of the [companion repository](https://github.com/Snowflake-Labs/getting-started-with-snowflake-dashboards/tree/main/getting-started):
 
 | File | What it does |
 |---|---|
-| [`setup.sql`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/blob/main/getting-started/setup.sql) | Creates three tables of synthetic data and the `REVENUE_SEMANTIC_VIEW` semantic view in your schema |
-| [`revenue_pulse.dash`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/blob/main/getting-started/revenue_pulse.dash) | The finished dashboard: tiles, filters, layout, and SQL in one file |
-| [`cleanup.sql`](https://github.com/sfc-gh-cnantasenamat/getting-started-with-snowflake-dashboards/blob/main/getting-started/cleanup.sql) | Drops the four objects `setup.sql` created, for when you're done |
+| [`setup.sql`](https://github.com/Snowflake-Labs/getting-started-with-snowflake-dashboards/blob/main/getting-started/setup.sql) | Creates three tables of synthetic data and the `REVENUE_SEMANTIC_VIEW` semantic view in your schema |
+| [`revenue_pulse.dash`](https://github.com/Snowflake-Labs/getting-started-with-snowflake-dashboards/blob/main/getting-started/revenue_pulse.dash) | The finished dashboard: tiles, filters, layout, and SQL in one file |
+| [`cleanup.sql`](https://github.com/Snowflake-Labs/getting-started-with-snowflake-dashboards/blob/main/getting-started/cleanup.sql) | Drops the four objects `setup.sql` created, for when you're done |
 
 On each file's GitHub page, select **Download raw file**.
 
